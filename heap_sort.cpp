@@ -36,7 +36,6 @@ void heap_sort(Vector vector){
 		int temp = vector.data[i];
 		vector.data[i] = vector.data[0];
 		vector.data[0] = temp;
-		cout << "the first and last indexes have been switched so now the array is:" << endl;
 		vector.print_vector();
 	}
 
@@ -50,7 +49,6 @@ void percolate(Vector vector, int last_index){
 		if(vector.data[j] == -10){
 			return;
 		}
-		cout << "======= inside do/while loop =========" << endl;
 		vector.print_vector();
 		int left_child = 2*j + 1;
 		int right_child = 2*j + 2;
@@ -77,8 +75,6 @@ void percolate(Vector vector, int last_index){
 					vector.data[j] = vector.data[right_child];
 					vector.data[right_child] = temp;
 					j = right_child;
-					cout << " j is now equal to the right_child: " << j;
-
 				} else {
 					return;
 				}
@@ -101,9 +97,7 @@ void percolate(Vector vector, int last_index){
 		} else {
 			return;
 		}
-
-		cout << "j's value is: " << j << " with value " << vector.data[j] << endl;
-
+		
 	} while(j <= last_index);
 }
 
